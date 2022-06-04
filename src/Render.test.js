@@ -9,5 +9,6 @@ describe("rendering", () => {
     expect(screen.getByRole("textbox")).toBeTruthy();
     expect(screen.getAllByRole("button")[0]).toBeTruthy();
     expect(screen.getAllByRole("button")[1]).toBeTruthy();
+    expect(screen.getByTestId("test")).toBeTruthy();
   });
 });

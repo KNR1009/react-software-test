@@ -8,6 +8,7 @@ export const Render = () => {
       <button>CLick1</button>
       <button>CLick2</button>
       <p>こんばんわ</p>
+      <span data-testid="test">テスト</span>
     </>
   );
 };
