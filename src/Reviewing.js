@@ -2,25 +2,18 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 /* テストの復習用 */
-export const Reviewing = ({ outputConsole }) => {
-  const [value, setValue] = useState("");
-
-  const onChange = (e) => {
-    setValue(e.target.value);
-  };
-
-  const onClick = () => {
-    if (value !== "") {
-      // 入力フォームにデータが入っていれば呼び出される
-      outputConsole(value);
-    }
-  };
-
+export const Reviewing = ({ frameworks }) => {
+  /* propsがない場合と配列の要素が0の場合は */
+  if (!frameworks || !frameworks.length) {
+    return <h1>No data !</h1>;
+  }
   return (
-    <>
-      <input onChange={onChange} placeholder="input-value" />
-      {/* {value !== "" && <h1>{value}</h1>} */}
-      <button onClick={onClick}>クリック</button>
-    </>
+    <div>
+      <ul>
+        {frameworks.map(({ id, item }) => (
+          <li key={id}>{item}</li>
+        ))}
+      </ul>
+    </div>
   );
 };

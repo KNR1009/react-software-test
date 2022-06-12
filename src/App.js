@@ -30,7 +30,7 @@ function App() {
           console.log(e);
         }}
       ></RenderInput> */}
-      <Reviewing outputConsole={(value) => console.log(value)}></Reviewing>
+      <Reviewing frameworks={data}></Reviewing>
     </div>
   );
 }
