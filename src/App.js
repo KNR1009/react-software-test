@@ -3,6 +3,7 @@ import React from "react";
 // import { Counter } from "./features/counter/Counter";
 import { RenderInput } from "./RenderInput";
 import { FrameworkList } from "./FrameworkList";
+import { Reviewing } from "./Reviewing";
 
 import "./App.css";
 const data = [
@@ -23,12 +24,13 @@ const data = [
 function App() {
   return (
     <div className="App">
-      <FrameworkList frameworks={data}></FrameworkList>
+      {/* <FrameworkList frameworks={data}></FrameworkList> */}
       {/* <RenderInput
         outputConsole={(e) => {
           console.log(e);
         }}
       ></RenderInput> */}
+      <Reviewing></Reviewing>
     </div>
   );
 }
