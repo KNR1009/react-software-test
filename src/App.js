@@ -1,10 +1,10 @@
 import React from "react";
 // import logo from "./logo.svg";
 // import { Counter } from "./features/counter/Counter";
-import { RenderInput } from "./RenderInput";
-import { FrameworkList } from "./FrameworkList";
-import { Reviewing } from "./Reviewing";
-
+// import { RenderInput } from "./RenderInput";
+// import { FrameworkList } from "./FrameworkList";
+// import { Reviewing } from "./Reviewing";
+import { MockServer } from "./MockServer.js";
 import "./App.css";
 const data = [
   {
@@ -30,7 +30,8 @@ function App() {
           console.log(e);
         }}
       ></RenderInput> */}
-      <Reviewing></Reviewing>
+      {/* <Reviewing></Reviewing> */}
+      <MockServer></MockServer>
     </div>
   );
 }
