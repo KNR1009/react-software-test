@@ -1,19 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 /* テストの復習用 */
-export const Reviewing = ({ frameworks }) => {
-  /* propsがない場合と配列の要素が0の場合は */
-  if (!frameworks || !frameworks.length) {
-    return <h1>No data !</h1>;
-  }
+export const Reviewing = ({}) => {
+  const [user, setUser] = useState(null);
+
+  const fetchJson = async () => {
+    const res = await axios.get("https://jsonplaceholder.typicode.com/users/1");
+    return res.data;
+  };
+
+  useEffect(() => {
+    try {
+      const getUser = async () => {
+        const userDate = await fetchJson();
+        setUser(userDate);
+      };
+      getUser();
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
+
   return (
     <div>
-      <ul>
-        {frameworks.map(({ id, item }) => (
-          <li key={id}>{item}</li>
-        ))}
-      </ul>
+      {user ? (
+        <p>
+          I am {user.username} : {user.email}
+        </p>
+      ) : (
+        <p>ローディング中</p>
+      )}
     </div>
   );
 };
