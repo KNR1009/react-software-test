@@ -26,7 +26,7 @@ export const MockServer = () => {
         {buttonText}
       </button>
       {username && <h3>{username}</h3>}
-      {error && <p data-testid="error">{error}</p>}
+      {error && <h3 data-testid="error">{error}</h3>}
     </div>
   );
 };
