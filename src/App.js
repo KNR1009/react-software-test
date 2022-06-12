@@ -30,7 +30,7 @@ function App() {
           console.log(e);
         }}
       ></RenderInput> */}
-      <Reviewing></Reviewing>
+      <Reviewing outputConsole={(value) => console.log(value)}></Reviewing>
     </div>
   );
 }

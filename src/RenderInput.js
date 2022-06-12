@@ -11,6 +11,7 @@ export const RenderInput = ({ outputConsole }) => {
   const updateValue = (e) => {
     setInput(e.target.value);
   };
+
   return (
     <div>
       <input
